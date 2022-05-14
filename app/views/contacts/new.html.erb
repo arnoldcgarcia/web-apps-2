@@ -1,5 +1,5 @@
 <h1>New Contact</h1>
-<% puts "HERE ARE THE PARAMS #{params}" %>
+
 <%= form_with :model => @contact do |form| %>
   <p>
     <%= form.label "first_name" %>
@@ -14,6 +14,7 @@
     <%= form.text_field "phone_number" %>
   </p>
   <!-- So we can transfer state from the previous action to the next -->
-  <%= form.hidden_field :company_id, value: params["company_id"]%>
+  
+  <%= form.hidden_field :company_id,value: params["company_id"] %>
   <%= form.submit %>
 <% end %>
