@@ -9,4 +9,10 @@ class ContactsController < ApplicationController
     @contact = Contact.new
   end
 
+  def create
+    Contact.create(first_name: params["contact"]["first_name"], last_name: params["contact"]["last_name"], email: params["contact"]["email"],phone_number: params["contact"]["phone_number"],company_id: params["company"]["company_id"])
+    redirect_to "/companies/#{@contact["company_id"]}"
+  end
+
+
 end
